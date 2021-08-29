@@ -1,13 +1,16 @@
 SELECT ROUND(AVG(score), 1) as avg
     , COUNT(score) as count
+    , game_name
     , music_name
     FROM (SELECT
             CASE WHEN score >= 100 THEN 100
                 ELSE score END
+            , game_name
             , music_name
             FROM (
                 SELECT g_m.music as music_id
                     , m.name as music_name
+                    , g.gamename as game_name
                     , u_m.tokuten as score
                     FROM game_music as g_m
                     INNER JOIN gamelist as g ON g.id = g_m.game
@@ -16,7 +19,7 @@ SELECT ROUND(AVG(score), 1) as avg
                     INNER JOIN usermusic_tokuten as u_m ON u_m.music = g_m.music
                     WHERE b.brandname LIKE '%feng%') as d1
     ) as d2
-    GROUP BY music_name
+    GROUP BY game_name, music_name
     HAVING COUNT(score) > 3
     ORDER BY ROUND(AVG(score), 1) DESC;
 

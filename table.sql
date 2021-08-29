@@ -1,9 +1,4 @@
 
-misato_aki: 12413 from createrlist
-DESIRE: 555 from musiclist
-from usermusic_tokuten
-
-
 usermusic_tokuten
     music_id
     user_id
