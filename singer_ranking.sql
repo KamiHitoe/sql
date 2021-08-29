@@ -16,6 +16,7 @@ SELECT ROUND(AVG(score), 1) as avg
                     WHERE c.name LIKE '%美郷あき%') as d1
     ) as d2
     GROUP BY music_name
+    HAVING COUNT(score) > 3
     ORDER BY ROUND(AVG(score), 1) DESC;
 
 -- 任意のmusic_idに対して平均値を返すクエリ
