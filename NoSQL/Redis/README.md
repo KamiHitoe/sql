@@ -1,34 +1,41 @@
 
-# mongoDB
+# Redis
 
-## glossary
+## Feature
+インメモリ型のDBのため高速。その代わり容量制限が厳しいので、リアルタイム処理やログ用として用いられる。データの永続化のために定期的にディスクにデータを書き出す。サーバとクライアントに分けて接続する
 
-mongoDBはスキーマレスである。つまり、コレクションごとに型がないので、型チェックなしにドキュメントを挿入することが可能
 
-```js
-glossary: {
-    database: database,
-    table: collection,
-    record: document,
-    column: field,
-}
+## Glossary
+
+RedisはKVS(Key Value Store)型のNoSQL。Valueに複雑なデータ構造を保持できる
+
+### データ型
+
+- String: string, number
+- List: 時系列データ等
+- Set: 集合(unique)
+- Sorted Set: Set with weight
+- Hash: Key, Value
+
+## Syntax
+
+サーバを起動・中止
+```
+redis-server
+Ctrl + c
 ```
 
-## syntax
-
-DB一覧を確認
-```js
-show databases;
+クライアントから接続・終了・保存・保存して終了
+```
+redis-cli
+exit
+bgsave
+shutdown
 ```
 
-現在のDBを確認
-```js
-db.stats();
+DBの接続(0 - 15まで存在する)
 ```
-
-DBの作成、接続
-```js
-use "db";
+select "num"
 ```
 
 DBの削除
