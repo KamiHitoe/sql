@@ -71,6 +71,11 @@ documentの全件削除
 db."collection".remove({});
 ```
 
+documentの挿入
+```js
+db."collection".insert({key1: "value1", key2: "value2"});
+```
+
 条件の記号
 ```
 >= = $gte
