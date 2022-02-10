@@ -68,3 +68,51 @@
 
 ## index
 
+
+## query
+
+- SELECT
+  SELECT columns FROM table;
+  - DISTINCY: pick up data by only unique row
+    SELECT DISTINCT (column) FROM table;
+  - `WHERE`: specify row condition
+    SELECT * FROM table WHERE condition;
+  - AS: set alias
+    SELECT (column) AS column_alias FROM table;
+  - LIKE: search by string
+    SELECT * FROM table WHERE column LIKE '%strng%';
+  - IN: search by union
+    SELECT * FROM table WHERE column IN (value1, value2, ...);
+  - LIMIT: specify the number of response data
+    SELECT * FROM table LIMIT num;
+  - OFFSET: skip the number of data
+    SELECT * FROM table OFFSET num;
+  - `ORDER BY`: sort response data
+    SELECT * FROM table ORDER BY column (ASC or DESC);
+  - `JOIN`: join multiple tables
+    - INNER JOIN
+      SELECT * FROM table1 INNER JOIN table2 ON conditions;
+  - `GROUP BY`: group rows
+    SELECT * FROM table GROUP BY column1, column2, ...;
+  - `HAVING`: it is like WHERE. it specifies condition after GROUP BY
+    SELECT * FROM table GROUP BY column HAVING condition;
+
+- CRUD
+  - INSERT INTO: post values
+    INSERT INTO table(column1, column2, ...)
+    VALUES(value1, value2, ...);
+  - UPDATE SET: update values
+    UPDATE table SET column1=value1, column2=value2 WHERE condition;
+  - DELETE FROM: delete value
+    DELETE FROM table WHERE condition;
+
+- functions
+  - aggregate functions
+    - AVG(): return the average value
+    - COUNT(): return the number of value
+    - MAX(): return the maximum value
+    - MIN(): return the minimum value
+    - SUM(): return the sum of all or distinct value
+
+
+
