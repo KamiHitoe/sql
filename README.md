@@ -37,7 +37,9 @@
 ## 冗長設計
 ## バックアップ設計
 
+# MySQL
 
+- admin: root
 
 # SQL
 
